@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "シート検索文字ハイライト",
+  "version": "0.6.0",
+  "description": "Google スプレッドシートの検索語をDOM上の正確な文字範囲で強調します。",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://docs.google.com/spreadsheets/*"
+      ],
+      "js": [
+        "highlight.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    }
+  ]
+}
