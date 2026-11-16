@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "シート検索文字ハイライト",
-  "version": "0.6.0",
-  "description": "Google スプレッドシートの検索語をDOM上の正確な文字範囲で強調します。",
+  "name": "スプレッドシートの検索文字ハイライト",
+  "version": "0.6.1",
+  "description": "Google スプレッドシートで検索した文字に、セルの編集欄や数式バーで背景色を付けて見やすくします（一部の表示に対応）。",
   "content_scripts": [
     {
       "matches": [
