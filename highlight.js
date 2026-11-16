@@ -69,7 +69,7 @@
   function render() {
     scheduled = false;
     const input = document.querySelector(SEARCH_SELECTOR);
-    const query = visible(input) ? String(input.value || '').trim() : '';
+    const query = visible(input) ? String(input.value || '') : '';
     updateHighlights(query);
   }
 
