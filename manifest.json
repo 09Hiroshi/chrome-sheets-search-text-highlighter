@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Sheets Search Text Highlighter",
   "version": "1.0.0",
-  "description": "Google スプレッドシートで検索した文字を、セルの編集欄や数式バーで黄色くハイライトします。画面の状態によっては色が付かない場合があります。",
+  "description": "Google スプレッドシートで検索した文字のみを、セルの編集欄や数式バーでハイライトします。",
   "content_scripts": [
     {
       "matches": [
