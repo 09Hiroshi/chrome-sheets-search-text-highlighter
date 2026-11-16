@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "スプレッドシートの検索文字ハイライト",
+  "name": "Sheets Search Text Highlighter",
   "version": "1.0.0",
   "description": "Google スプレッドシートで検索した文字に、セルの編集欄や数式バーで背景色を付けて見やすくします（一部の表示に対応）。",
   "content_scripts": [
