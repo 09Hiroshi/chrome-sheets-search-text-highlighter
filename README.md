@@ -4,7 +4,7 @@ Google スプレッドシートで検索した語を見つけやすくする Chr
 
 ## Chrome ウェブストアからインストールする
 
-1. [Chrome ウェブストアで Sheets Search Text Highlighter を開く](https://chromewebstore.google.com/detail/jiamafchcemfhbmfmajoikieigcjpfcp?utm_source=item-share-cb)。
+1. Chrome ウェブストアで [Sheets Search Text Highlighter](https://chromewebstore.google.com/detail/jiamafchcemfhbmfmajoikieigcjpfcp?utm_source=item-share-cb) を開く。
 2. 「Chrome に追加」を選びます。
 3. Chrome の確認画面で「拡張機能を追加」を選びます。
 4. Google スプレッドシートのタブを再読み込みします。
