@@ -2,13 +2,9 @@
 
 Google スプレッドシートで検索した語を見つけやすくする Chrome 拡張機能です。ブラウザーが文字範囲を正確に取得できるテキスト欄では、一致した文字に背景色を付けます。セルの値や書式は変更しません。
 
-> **公開状況：Chrome ウェブストア公開前です。** 現在はストアからインストールできません。公開後、この README に Chrome ウェブストアのリンクを掲載します。
-
 ## Chrome ウェブストアからインストールする
 
-公開後は、次の手順でインストールできます。
-
-1. この README に掲載される Chrome ウェブストアのリンクを開きます。
+1. [Chrome ウェブストアで Sheets Search Text Highlighter を開く](https://chromewebstore.google.com/detail/jiamafchcemfhbmfmajoikieigcjpfcp?utm_source=item-share-cb)。
 2. 「Chrome に追加」を選びます。
 3. Chrome の確認画面で「拡張機能を追加」を選びます。
 4. Google スプレッドシートのタブを再読み込みします。
