@@ -5,8 +5,34 @@
   const FORMULA_SELECTOR = '#t-formula-bar-input, .docs-sheet-formula-bar-input';
   const EDITOR_SELECTOR = '#waffle-rich-text-editor';
   const HIGHLIGHT_NAME = 'sheet-search-exact-match-v1';
+  const COLOR_CHANNEL = 'sheets-search-text-highlighter-color-v1';
+  const DEFAULT_COLOR = '#ffe082';
+  let highlightColor = DEFAULT_COLOR;
   let highlightStyle;
   let scheduled = false;
+
+  function textColorFor(background) {
+    const channels = [1, 3, 5].map(index => {
+      const value = parseInt(background.slice(index, index + 2), 16) / 255;
+      return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+    });
+    const luminance = channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+    return luminance > 0.179 ? '#000000' : '#ffffff';
+  }
+
+  function updateStyle() {
+    if (!highlightStyle) return;
+    highlightStyle.textContent = `::highlight(${HIGHLIGHT_NAME}) { background-color: ${highlightColor}; color: ${textColorFor(highlightColor)}; }`;
+  }
+
+  window.addEventListener('message', event => {
+    if (event.source !== window || event.origin !== window.location.origin) return;
+    if (event.data?.channel !== COLOR_CHANNEL || event.data?.type !== 'color') return;
+    if (typeof event.data.color !== 'string' || !/^#[0-9a-f]{6}$/i.test(event.data.color)) return;
+    highlightColor = event.data.color.toLowerCase();
+    updateStyle();
+  });
+  window.postMessage({ channel: COLOR_CHANNEL, type: 'request-color' }, window.location.origin);
 
   function visible(element) {
     if (!element || !element.isConnected || !element.getClientRects?.().length) return false;
@@ -20,7 +46,7 @@
     if (!parent) return;
     highlightStyle = document.createElement('style');
     highlightStyle.dataset.sheetSearchExactHighlight = 'true';
-    highlightStyle.textContent = `::highlight(${HIGHLIGHT_NAME}) { background-color: #ffe082; color: #202124; }`;
+    updateStyle();
     parent.appendChild(highlightStyle);
   }
 
