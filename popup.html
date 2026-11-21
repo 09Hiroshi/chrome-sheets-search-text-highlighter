@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ハイライトの色</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>ハイライトの色</h1>
+    <p class="intro">検索した文字の背景色を選べます。</p>
+
+    <fieldset id="color-settings" disabled>
+      <legend>色見本</legend>
+      <div class="palette">
+        <label class="swatch"><input type="radio" name="highlight-color" value="#ffe082"><span class="color yellow"></span><span>黄色</span></label>
+        <label class="swatch"><input type="radio" name="highlight-color" value="#ffcc80"><span class="color orange"></span><span>オレンジ</span></label>
+        <label class="swatch"><input type="radio" name="highlight-color" value="#ffc1bc"><span class="color red"></span><span>赤</span></label>
+        <label class="swatch"><input type="radio" name="highlight-color" value="#f8bbd0"><span class="color pink"></span><span>ピンク</span></label>
+        <label class="swatch"><input type="radio" name="highlight-color" value="#d4c5f9"><span class="color purple"></span><span>紫</span></label>
+        <label class="swatch"><input type="radio" name="highlight-color" value="#bbdefb"><span class="color blue"></span><span>青</span></label>
+        <label class="swatch"><input type="radio" name="highlight-color" value="#a7e6e6"><span class="color aqua"></span><span>水色</span></label>
+        <label class="swatch"><input type="radio" name="highlight-color" value="#c5e1a5"><span class="color green"></span><span>緑</span></label>
+      </div>
+      <div class="custom-color">
+        <label for="custom-color">好きな色を選ぶ</label>
+        <input id="custom-color" type="color" value="#ffe082" aria-label="好きな色を選ぶ">
+      </div>
+    </fieldset>
+
+    <div class="preview">
+      <p class="preview-title">プレビュー</p>
+      <p><span id="preview-text">検索した文字</span> が目立ちます</p>
+    </div>
+    <p class="note">選んだ色は自動で保存されます。</p>
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>
